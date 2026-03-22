@@ -8,7 +8,7 @@ const VouchSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now }
 });
 
-// Index untuk mempercepat pencarian (Anti-Dupe)
+// Index untuk mempercepat validasi sistem anti-duplikat
 VouchSchema.index({ voucherId: 1, voucheeId: 1 });
 
 module.exports = mongoose.model('Vouch', VouchSchema);
